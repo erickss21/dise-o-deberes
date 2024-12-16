@@ -1,0 +1,13 @@
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #007bff81, #0057b38a);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  }

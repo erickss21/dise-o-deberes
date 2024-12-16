@@ -1,0 +1,157 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .container h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555555;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+
+  .form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-group.checkbox-group label {
+    font-weight: normal;
+    margin-left: 5px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  button:active {
+    background-color: #003f7f;
+  }
+
+  .back-button {
+    margin-bottom: 20px;
+  }
+
+  .back-button button {
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px;
+  }
+
+  .back-button button:hover {
+    background-color: #b02a37;
+  }
+</style>
+
+<div>
+  <a href="casa.component.html" class="back-button">
+    <button>❌ Volver</button>
+  </a>
+</div>
+<div class="container">
+  <h2>Formulario de Contacto</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">Nombre:</label>
+      <input type="text" id="firstName" formControlName="firstName" placeholder="Ingresa tu nombre" />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Apellidos:</label>
+      <input type="text" id="lastName" formControlName="lastName" placeholder="Ingresa tus apellidos" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" formControlName="email" placeholder="Ingresa tu correo electrónico" />
+    </div>
+
+    <div class="form-group">
+      <label for="cedula">Cédula:</label>
+      <input type="text" id="cedula" formControlName="cedula" placeholder="Ingresa tu cédula" />
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" formControlName="direccion" placeholder="Ingresa tu dirección" />
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Género:</label>
+      <select id="gender" formControlName="gender">
+        <option value="">Seleccione una opción</option>
+        <option value="male">Masculino</option>
+        <option value="female">Femenino</option>
+        <option value="other">Otro</option>
+      </select>
+    </div>
+
+    
+
+    <div class="form-group checkbox-group">
+      <input type="checkbox" formControlName="agree" />
+      <label>Acepto los términos y condiciones</label>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+</div>
